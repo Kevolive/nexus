@@ -28,7 +28,7 @@ export class ClientesService {
         });
     }
 
-    remoe(id: number) {
+    remove(id: number) {
         return this.prisma.cliente.delete({ where: { id } });
     }
 }
