@@ -12,7 +12,7 @@ export class CreateClienteDto {
     tecnica: string;
 
     @IsNumber()
-    cantidad: number;
+    cantidad: string;
 
     @IsString()
     direccion: string;
