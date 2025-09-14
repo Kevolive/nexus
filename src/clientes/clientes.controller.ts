@@ -1,10 +1,16 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch, Post, UseGuards } from '@nestjs/common';
 import { ClientesService } from './clientes.service';
 import { CreateClienteDto } from './dto/create-cliente.dto';
 import { UpdateClienteDto } from './dto/update-cliente.dto';
+import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
 
 @Controller('clientes')
 export class ClientesController {
+  @UseGuards(JwtAuthGuard)
+  @Get()
+  findWithToken() {
+    return 'Esta ruta está protegida i amigo, y solo acceden usuarios con token válido'
+  }
   constructor(private readonly clientesService: ClientesService) { }
 
 

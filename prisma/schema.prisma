@@ -33,3 +33,17 @@ datasource db {
   actualizacionEn DateTime @updatedAt
 
  }
+
+ model User {
+  id              Int         @id @default(autoincrement())
+  username        String      @unique
+  email           String      @unique
+  password        String
+  role            Role @default(USER)
+  createAt        DateTime    @default(now())
+ }
+
+ enum Role {
+  USER
+  ADMIN
+ }
