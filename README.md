@@ -22,9 +22,12 @@ main.ts
 - **WhatsApp** → Enviar mensajes vía API Meta.  
 - **Auth** → Sistema de autenticación y autorización con JWT.  
 - **Common** → Módulo de utilidades compartidas (pipes, interceptores, etc).
+ 
+ 
+ 
  🔹 Tecnologías
 
-Backend: NestJS
+Backend: NestJS - Typescript
 
 ORM:  Prisma 
 
@@ -35,3 +38,12 @@ Autenticación: JWT con Passport
 Mensajería: API Meta (WhatsApp Business)
 
 Generación de Facturas: Librerías QR + PDFKit
+
+
+⚓  Estado actual
+
+
+   ✅ Módulo Clientes implementado y probado.
+   ✅ Módulo Auth funcionando con JWT y roles.
+   ⏳ Facturación con QR + PDF en desarrollo.
+   ⏳ Integración WhatsApp pendiente.
