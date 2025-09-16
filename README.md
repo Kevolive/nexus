@@ -39,6 +39,17 @@ Mensajería: API Meta (WhatsApp Business)
 
 Generación de Facturas: Librerías QR + PDFKit
 
+📖 Documentación interactiva
+
+La API cuenta con documentación generada con **Swagger** para probar endpoints de forma sencilla:
+
+- URL: `http://localhost:3000/api/docs`
+- Incluye soporte para **JWT Bearer Token** 🔐  
+- Desde aquí puedes:
+  - Autenticarse con `/auth/login` y obtener un token.
+  - Usar el botón **Authorize** para probar endpoints protegidos.
+  - Explorar módulos como **Clientes**, **Auth**, **Mail**, etc.
+
 
 ⚓  Estado actual
 
