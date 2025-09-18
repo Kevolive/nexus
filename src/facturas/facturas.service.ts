@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import * as PDFDocument from 'pdfkit';
+import  PDFDocument from 'pdfkit';
 import * as fs from 'fs';
 
 @Injectable()
@@ -27,7 +27,7 @@ export class FacturasService {
         //Contenido de la factura
         doc.fontSize(25).text('Factura', { align: 'center' });
         doc.moveDown();
-        doc.fontSice(12).text(`Cliente: ${data.cliente}`);
+        doc.fontSize(12).text(`Cliente: ${data.cliente}`);
         doc.text(`Fecha: ${new Date().toLocaleDateString()}`);
         doc.moveDown();
         doc.text('Gracias por su compra!', { align: 'center' });
@@ -41,7 +41,7 @@ export class FacturasService {
         return new Promise((resolve) => {
             stream.on('finish', () => {
                 resolve({
-                    mensaje: 'Factura creada',
+                    mensaje: 'Factura generada correctamente',
                     ruta: rutaArchivo
                 });
             });
