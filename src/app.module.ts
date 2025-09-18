@@ -8,9 +8,10 @@ import { ClientesModule } from './clientes/clientes.module';
 import { DatabaseModule } from './database/database.module';
 import { AuthController } from './auth/auth.controller';
 import { AuthModule } from './auth/auth.module';
+import { FacturasModule } from './facturas/facturas.module';
 
 @Module({
-  imports: [MailModule, ClientesModule, DatabaseModule, AuthModule],
+  imports: [MailModule, ClientesModule, DatabaseModule, AuthModule, FacturasModule],
   controllers: [AppController, ClientesController, AuthController],
   providers: [AppService, ClientesService],
 })
