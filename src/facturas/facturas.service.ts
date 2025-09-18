@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import  PDFDocument from 'pdfkit';
+import PDFDocument from 'pdfkit';
 import * as fs from 'fs';
+import * as QRCode from 'qrcode';
 
 @Injectable()
 export class FacturasService {
@@ -25,12 +26,34 @@ export class FacturasService {
         doc.pipe(stream);
 
         //Contenido de la factura
-        doc.fontSize(25).text('Factura', { align: 'center' });
+        doc.fontSize(25).text('Factura de compra', { align: 'center' });
         doc.moveDown();
         doc.fontSize(12).text(`Cliente: ${data.cliente}`);
         doc.text(`Fecha: ${new Date().toLocaleDateString()}`);
         doc.moveDown();
         doc.text('Gracias por su compra!', { align: 'center' });
+
+
+        //Generar el QR
+        const infoQR = `Factura de ${data.cliente} - Total: $${data.total}`
+        const qrDataUrl = await QRCode.toDataUrl(infoQR);
+
+        //Convertir a base64 -> Buffer
+        const qrBase64 = qrDataUrl.replace(/^data:image\/png;base64,/, "");
+        const qrBuffer = Buffer.from(qrBase64, 'base64');
+
+        //Agregar el QR al PDF
+        doc.fontSize(10).text('Escanea el QR para más información', { align: 'center' });
+        doc.image(qrBuffer, {
+            fit: [150, 150],
+            align: 'center',
+            valign: 'center'
+
+        }
+        );
+        doc.moveDown();
+        doc.text('Nexus - Tu tienda en línea. ¡GRACIAS POR TU COMPRA!', { align: 'center' });
+        
 
         //Finalizar el documento
         doc.end();
@@ -45,11 +68,11 @@ export class FacturasService {
                     ruta: rutaArchivo
                 });
             });
-            
-            
+
+
 
         })
 
-        
+
     }
 }
