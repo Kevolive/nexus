@@ -17,17 +17,65 @@ export class FacturasService {
         const stream = fs.createWriteStream(rutaArchivo);
         doc.pipe(stream);
 
-        // Contenido de la factura
+        //Encabezado
         doc.fontSize(25).text('Factura de compra', { align: 'center' });
         doc.moveDown();
-        doc.fontSize(12).text(`Cliente: ${data.cliente}`);
+        doc.fontSize(12).text(`Factura No: ${Date.now()}`, { align: 'right' });
         doc.text(`Fecha: ${new Date().toLocaleDateString()}`);
-        doc.text(`Total: $${data.total}`);
+        doc.moveDown(4);
+
+
+        //Datos del cliente
+        doc.fontSize(16).text('Datos del Cliente', { underline: true });
         doc.moveDown();
-        doc.text('Gracias por su compra!', { align: 'center' });
+        doc.fontSize(12).text(`Nombre: ${data.cliente}`);
+        doc.moveDown(2);
+
+        // Contenido de la factura
+        const tableTop = doc.y;
+        const itemX = 50;
+        const descX = 150;
+        const qtyX = 350;
+        const priceX = 420;
+        const totalX = 500;
+        let totaly = doc.y + 20;
+
+
+        doc.fontSize(12).text('Item', itemX, tableTop);
+        doc.text('Descripción', descX, tableTop);
+        doc.text('Cantidad', qtyX, tableTop);
+        doc.text('P. Unitario', priceX, tableTop);
+        doc.text('Total', totalX, tableTop);
+
+        doc.moveDown();
+
+        // Una fila de ejemplo
+        const rowY = doc.y + 5;
+        doc.text('1', itemX, rowY);
+        doc.text(data.items, descX, rowY);
+        doc.text(data.cantidad, qtyX, rowY);
+        doc.text(`$${data.precioUnitario || data.precio_unitario}`, priceX, rowY);
+        doc.text(`$${data.total}`, totalX, rowY);
+
+        doc.moveDown(2);
+
+        // TOTALES.
+
+        doc.fontSize(12).text('Abono', 350, doc.y, { width: 70, align: 'right' });
+        doc.text('Saldo', 450, doc.y, { width: 70, align: 'right' });
+
+        doc.moveDown();
+        doc.fontSize(12).text(`$${data.abono}`, 350, doc.y, { width: 70, align: 'right' });
+        doc.text(`$${data.saldo}`, 450, doc.y, { width: 70, align: 'right' });
+
+
+        doc.moveDown(3);
+
+
+
 
         // Generar el QR
-        const infoQR = `Factura de ${data.cliente} - Total: $${data.total}`;
+        const infoQR = `Factura de ${data.cliente} - Items: ${data.items} -Descripción: ${data.descripcion} -Precio unitario: $${data.precioUnitario} -Cantidad: ${data.cantidad} - Abono: $${data.abono} - saldo: $${data.saldo} - Total: $${data.total}`;
         const qrDataUrl = await QRCode.toDataURL(infoQR);
 
         // Convertir base64 → Buffer
@@ -36,20 +84,19 @@ export class FacturasService {
 
 
         const pageWidth = doc.page.width;
-        const qrSize = 150;
+        const qrSize = 200;
         const qrX = (pageWidth - qrSize) / 2; // Centrar el QR
         const qrY = doc.y; // Posición Y actual del documento
 
 
         // Agregar QR al PDF
         doc.moveDown();
-        doc.fontSize(10).text('Escanea el QR para más información', { align: 'center' });
+
         doc.image(qrBuffer, qrX, qrY, {
             fit: [qrSize, qrSize],
         });
 
-        doc.moveDown();
-        doc.text('Nexus - Tu tienda en línea. ¡GRACIAS POR TU COMPRA!', { align: 'center' });
+
 
         doc.end();
 
