@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import PDFDocument from 'pdfkit';
 import * as fs from 'fs';
-import * as QRCode from 'qrcode';
+import  QRCode from 'qrcode';
 
 @Injectable()
 export class FacturasService {
