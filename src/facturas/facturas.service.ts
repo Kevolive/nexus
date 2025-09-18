@@ -34,13 +34,18 @@ export class FacturasService {
         const qrBase64 = qrDataUrl.replace(/^data:image\/png;base64,/, '');
         const qrBuffer = Buffer.from(qrBase64, 'base64');
 
+
+        const pageWidth = doc.page.width;
+        const qrSize = 150;
+        const qrX = (pageWidth - qrSize) / 2; // Centrar el QR
+        const qrY = doc.y; // Posición Y actual del documento
+
+
         // Agregar QR al PDF
         doc.moveDown();
         doc.fontSize(10).text('Escanea el QR para más información', { align: 'center' });
-        doc.image(qrBuffer, {
-            fit: [150, 150],
-            align: 'center',
-            valign: 'center',
+        doc.image(qrBuffer, qrX, qrY, {
+            fit: [qrSize, qrSize],
         });
 
         doc.moveDown();
