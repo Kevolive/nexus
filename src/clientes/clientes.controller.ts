@@ -1,21 +1,31 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post, UseGuards } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch, Post, SetMetadata, UseGuards } from '@nestjs/common';
 import { ClientesService } from './clientes.service';
 import { CreateClienteDto } from './dto/create-cliente.dto';
 import { UpdateClienteDto } from './dto/update-cliente.dto';
 import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
 import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
+import { RolesGuard } from 'src/auth/guards/roles.guard';
 
 
 @ApiTags('Clientes')
 @ApiBearerAuth('access-token')
 @Controller('clientes')
 export class ClientesController {
+  constructor(private readonly clientesService: ClientesService) { }
+
+
   @UseGuards(JwtAuthGuard)
-  @Get()
+  @Get('protegida')
   findWithToken() {
     return 'Esta ruta está protegida i amigo, y solo acceden usuarios con token válido'
   }
-  constructor(private readonly clientesService: ClientesService) { }
+
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  @SetMetadata('roles', ['admin'])
+  @Get('admin')
+  findForAdmin() {
+    return 'Esta ruta solo la pueden ver los usuarios con rol de admin';
+  }
 
 
   @Post()
