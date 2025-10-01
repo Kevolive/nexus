@@ -19,7 +19,7 @@ main.ts
 
  - **Clientes** → CRUD de clientes (**implementado y probado en Postman**).  
 - **Facturas** → Generar facturas (QR, PDF, envío).  
-- **WhatsApp** → Enviar mensajes vía API Meta.  
+- **WhatsApp** → Enviar mensajes con un script de python; automatización con pyautogui.  
 - **Auth** → Sistema de autenticación y autorización con JWT.  
 - **Common** → Módulo de utilidades compartidas (pipes, interceptores, etc).
  
