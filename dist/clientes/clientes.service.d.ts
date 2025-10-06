@@ -1,0 +1,82 @@
+import { PrismaService } from 'src/database/prisma/prisma.service';
+import { CreateClienteDto } from './dto/create-cliente.dto';
+import { UpdateClienteDto } from './dto/update-cliente.dto';
+export declare class ClientesService {
+    private prisma;
+    constructor(prisma: PrismaService);
+    create(data: CreateClienteDto): import("@prisma/client").Prisma.Prisma__ClienteClient<{
+        nombre: string;
+        descripcion: string;
+        tecnica: string;
+        cantidad: string;
+        direccion: string;
+        celular: string;
+        precioUnitario: number;
+        precioTotal: number;
+        fecha: Date;
+        imagen: string | null;
+        creadoEn: Date;
+        actualizacionEn: Date;
+        id: number;
+    }, never, import("@prisma/client/runtime/library").DefaultArgs, import("@prisma/client").Prisma.PrismaClientOptions>;
+    findAll(): import("@prisma/client").Prisma.PrismaPromise<{
+        nombre: string;
+        descripcion: string;
+        tecnica: string;
+        cantidad: string;
+        direccion: string;
+        celular: string;
+        precioUnitario: number;
+        precioTotal: number;
+        fecha: Date;
+        imagen: string | null;
+        creadoEn: Date;
+        actualizacionEn: Date;
+        id: number;
+    }[]>;
+    findOne(id: number): import("@prisma/client").Prisma.Prisma__ClienteClient<{
+        nombre: string;
+        descripcion: string;
+        tecnica: string;
+        cantidad: string;
+        direccion: string;
+        celular: string;
+        precioUnitario: number;
+        precioTotal: number;
+        fecha: Date;
+        imagen: string | null;
+        creadoEn: Date;
+        actualizacionEn: Date;
+        id: number;
+    } | null, null, import("@prisma/client/runtime/library").DefaultArgs, import("@prisma/client").Prisma.PrismaClientOptions>;
+    update(id: number, data: UpdateClienteDto): import("@prisma/client").Prisma.Prisma__ClienteClient<{
+        nombre: string;
+        descripcion: string;
+        tecnica: string;
+        cantidad: string;
+        direccion: string;
+        celular: string;
+        precioUnitario: number;
+        precioTotal: number;
+        fecha: Date;
+        imagen: string | null;
+        creadoEn: Date;
+        actualizacionEn: Date;
+        id: number;
+    }, never, import("@prisma/client/runtime/library").DefaultArgs, import("@prisma/client").Prisma.PrismaClientOptions>;
+    remove(id: number): import("@prisma/client").Prisma.Prisma__ClienteClient<{
+        nombre: string;
+        descripcion: string;
+        tecnica: string;
+        cantidad: string;
+        direccion: string;
+        celular: string;
+        precioUnitario: number;
+        precioTotal: number;
+        fecha: Date;
+        imagen: string | null;
+        creadoEn: Date;
+        actualizacionEn: Date;
+        id: number;
+    }, never, import("@prisma/client/runtime/library").DefaultArgs, import("@prisma/client").Prisma.PrismaClientOptions>;
+}
