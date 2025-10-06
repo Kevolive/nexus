@@ -18,7 +18,7 @@ import { ConfigModule } from '@nestjs/config';
 @Module({
   imports: [ ConfigModule.forRoot({
     isGlobal: true,
-    envFilePath: process.env.NODE_ENV === 'production' ? '.env' : '.env.production',
+    envFilePath: process.env.NODE_ENV === 'production' ? '.env' : '.env.local',
   }),
   MailModule, ClientesModule, DatabaseModule, AuthModule, FacturasModule, WhatsappModule],
   controllers: [AppController, ClientesController, AuthController, WhatsappController],
