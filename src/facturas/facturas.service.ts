@@ -109,4 +109,13 @@ export class FacturasService {
             });
         });
     }
+
+    obtenerFacturas() {
+        const carpeta= './facturas';
+        if (!fs.existsSync(carpeta)) {
+            return {mensaje: 'No hay facturas disponibles', facturas: []};
+        }
+const archivos = fs.readdirSync(carpeta);
+return {mensaje: 'Facturas obtenidas correctamente', facturas: archivos};
+    }
 }

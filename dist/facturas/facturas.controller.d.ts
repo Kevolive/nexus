@@ -3,4 +3,8 @@ export declare class FacturasController {
     private readonly facturaService;
     constructor(facturaService: FacturasService);
     crearFactura(data: any): Promise<unknown>;
+    obtenerFacturas(): {
+        mensaje: string;
+        facturas: string[];
+    };
 }

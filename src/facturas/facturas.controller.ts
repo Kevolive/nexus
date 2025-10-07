@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { FacturasService } from './facturas.service';
 
 @Controller('facturas')
@@ -9,5 +9,9 @@ export class FacturasController {
     @Post()
     crearFactura(@Body() data: any) {
         return this.facturaService.crearFactura(data);
+    }
+    @Get()
+    obtenerFacturas() {
+        return this.facturaService.obtenerFacturas();
     }
 }

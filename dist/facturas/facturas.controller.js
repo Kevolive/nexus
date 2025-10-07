@@ -23,6 +23,9 @@ let FacturasController = class FacturasController {
     crearFactura(data) {
         return this.facturaService.crearFactura(data);
     }
+    obtenerFacturas() {
+        return this.facturaService.obtenerFacturas();
+    }
 };
 exports.FacturasController = FacturasController;
 __decorate([
@@ -32,6 +35,12 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", void 0)
 ], FacturasController.prototype, "crearFactura", null);
+__decorate([
+    (0, common_1.Get)(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], FacturasController.prototype, "obtenerFacturas", null);
 exports.FacturasController = FacturasController = __decorate([
     (0, common_1.Controller)('facturas'),
     __metadata("design:paramtypes", [facturas_service_1.FacturasService])
