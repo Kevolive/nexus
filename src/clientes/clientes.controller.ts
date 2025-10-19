@@ -17,7 +17,7 @@ export class ClientesController {
   @UseGuards(JwtAuthGuard)
   @Get('protegida')
   findWithToken() {
-    return 'Esta ruta está protegida i amigo, y solo acceden usuarios con token válido'
+    return 'Esta ruta está protegida mi amigo, y solo acceden usuarios con token válido'
   }
 
   @UseGuards(JwtAuthGuard, RolesGuard)
