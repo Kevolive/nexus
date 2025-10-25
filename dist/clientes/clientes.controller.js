@@ -26,7 +26,7 @@ let ClientesController = class ClientesController {
         this.clientesService = clientesService;
     }
     findWithToken() {
-        return 'Esta ruta está protegida i amigo, y solo acceden usuarios con token válido';
+        return 'Esta ruta está protegida mi amigo, y solo acceden usuarios con token válido';
     }
     findForAdmin() {
         return 'Esta ruta solo la pueden ver los usuarios con rol de admin';

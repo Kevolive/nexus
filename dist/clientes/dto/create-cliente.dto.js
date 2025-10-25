@@ -15,11 +15,14 @@ class CreateClienteDto {
     nombre;
     descripcion;
     tecnica;
+    tipo;
     cantidad;
     direccion;
     celular;
     precioUnitario;
     precioTotal;
+    imagen;
+    fecha;
 }
 exports.CreateClienteDto = CreateClienteDto;
 __decorate([
@@ -34,6 +37,10 @@ __decorate([
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
 ], CreateClienteDto.prototype, "tecnica", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], CreateClienteDto.prototype, "tipo", void 0);
 __decorate([
     (0, class_validator_1.IsNumber)(),
     __metadata("design:type", String)
@@ -54,4 +61,12 @@ __decorate([
     (0, class_validator_1.IsNumber)(),
     __metadata("design:type", Number)
 ], CreateClienteDto.prototype, "precioTotal", void 0);
+__decorate([
+    (0, class_validator_1.IsDataURI)(),
+    __metadata("design:type", String)
+], CreateClienteDto.prototype, "imagen", void 0);
+__decorate([
+    (0, class_validator_1.IsDate)(),
+    __metadata("design:type", Date)
+], CreateClienteDto.prototype, "fecha", void 0);
 //# sourceMappingURL=create-cliente.dto.js.map

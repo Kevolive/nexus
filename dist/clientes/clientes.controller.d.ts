@@ -15,8 +15,8 @@ export declare class ClientesController {
         celular: string;
         precioUnitario: number;
         precioTotal: number;
-        fecha: Date;
         imagen: string | null;
+        fecha: Date;
         creadoEn: Date;
         actualizacionEn: Date;
         id: number;
@@ -30,8 +30,8 @@ export declare class ClientesController {
         celular: string;
         precioUnitario: number;
         precioTotal: number;
-        fecha: Date;
         imagen: string | null;
+        fecha: Date;
         creadoEn: Date;
         actualizacionEn: Date;
         id: number;
@@ -45,8 +45,8 @@ export declare class ClientesController {
         celular: string;
         precioUnitario: number;
         precioTotal: number;
-        fecha: Date;
         imagen: string | null;
+        fecha: Date;
         creadoEn: Date;
         actualizacionEn: Date;
         id: number;
@@ -60,8 +60,8 @@ export declare class ClientesController {
         celular: string;
         precioUnitario: number;
         precioTotal: number;
-        fecha: Date;
         imagen: string | null;
+        fecha: Date;
         creadoEn: Date;
         actualizacionEn: Date;
         id: number;
@@ -75,8 +75,8 @@ export declare class ClientesController {
         celular: string;
         precioUnitario: number;
         precioTotal: number;
-        fecha: Date;
         imagen: string | null;
+        fecha: Date;
         creadoEn: Date;
         actualizacionEn: Date;
         id: number;
