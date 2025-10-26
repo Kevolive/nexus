@@ -1,5 +1,5 @@
 // create-cliente.dto.ts
-import { IsString, IsNumber, IsDataURI, IsDate, IsDateString, IsOptional } from 'class-validator';
+import { IsString, IsNumber, IsDateString, IsOptional } from 'class-validator';
 
 export class CreateClienteDto {
     @IsString()
