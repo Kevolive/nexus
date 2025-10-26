@@ -15,7 +15,7 @@ export class CreateClienteDto {
     tipo: string;
 
     @IsNumber()
-    cantidad: string;
+    cantidad: number;
 
     @IsString()
     direccion: string;
@@ -35,5 +35,5 @@ export class CreateClienteDto {
 
     @IsOptional()
     @IsString()
-    imagen?: string;
+    image?: string;
 }
