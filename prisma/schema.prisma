@@ -12,7 +12,7 @@ model Cliente {
   nombre          String
   descripcion     String
   tecnica         String
-  cantidad        String
+  cantidad        Int
   direccion       String
   celular         String
   precioUnitario  Float

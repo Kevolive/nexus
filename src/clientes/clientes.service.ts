@@ -4,13 +4,18 @@ import { CreateClienteDto } from './dto/create-cliente.dto';
 import { UpdateClienteDto } from './dto/update-cliente.dto';
 
 
+
 @Injectable()
 export class ClientesService {
 
     constructor(private prisma: PrismaService) { }
 
     create(data: CreateClienteDto) {
-        return this.prisma.cliente.create({ data });
+        return this.prisma.cliente.create({ data: {
+            ...data,
+            cantidad: Number(data.cantidad),
+            fecha: new Date(data.fecha),
+        } });
     }
 
     findAll() {
