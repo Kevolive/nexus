@@ -12,6 +12,7 @@ model Cliente {
   nombre          String
   descripcion     String
   tecnica         String
+  tipo            String
   cantidad        Int
   direccion       String
   celular         String
