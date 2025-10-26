@@ -18,7 +18,11 @@ let ClientesService = class ClientesService {
         this.prisma = prisma;
     }
     create(data) {
-        return this.prisma.cliente.create({ data });
+        return this.prisma.cliente.create({ data: {
+                ...data,
+                cantidad: Number(data.cantidad),
+                fecha: new Date(data.fecha),
+            } });
     }
     findAll() {
         return this.prisma.cliente.findMany();

@@ -10,7 +10,7 @@ export declare class ClientesController {
         nombre: string;
         descripcion: string;
         tecnica: string;
-        cantidad: string;
+        cantidad: number;
         direccion: string;
         celular: string;
         precioUnitario: number;
@@ -25,7 +25,7 @@ export declare class ClientesController {
         nombre: string;
         descripcion: string;
         tecnica: string;
-        cantidad: string;
+        cantidad: number;
         direccion: string;
         celular: string;
         precioUnitario: number;
@@ -40,7 +40,7 @@ export declare class ClientesController {
         nombre: string;
         descripcion: string;
         tecnica: string;
-        cantidad: string;
+        cantidad: number;
         direccion: string;
         celular: string;
         precioUnitario: number;
@@ -55,7 +55,7 @@ export declare class ClientesController {
         nombre: string;
         descripcion: string;
         tecnica: string;
-        cantidad: string;
+        cantidad: number;
         direccion: string;
         celular: string;
         precioUnitario: number;
@@ -70,7 +70,7 @@ export declare class ClientesController {
         nombre: string;
         descripcion: string;
         tecnica: string;
-        cantidad: string;
+        cantidad: number;
         direccion: string;
         celular: string;
         precioUnitario: number;

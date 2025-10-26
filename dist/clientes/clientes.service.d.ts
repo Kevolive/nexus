@@ -8,7 +8,7 @@ export declare class ClientesService {
         nombre: string;
         descripcion: string;
         tecnica: string;
-        cantidad: string;
+        cantidad: number;
         direccion: string;
         celular: string;
         precioUnitario: number;
@@ -23,7 +23,7 @@ export declare class ClientesService {
         nombre: string;
         descripcion: string;
         tecnica: string;
-        cantidad: string;
+        cantidad: number;
         direccion: string;
         celular: string;
         precioUnitario: number;
@@ -38,7 +38,7 @@ export declare class ClientesService {
         nombre: string;
         descripcion: string;
         tecnica: string;
-        cantidad: string;
+        cantidad: number;
         direccion: string;
         celular: string;
         precioUnitario: number;
@@ -53,7 +53,7 @@ export declare class ClientesService {
         nombre: string;
         descripcion: string;
         tecnica: string;
-        cantidad: string;
+        cantidad: number;
         direccion: string;
         celular: string;
         precioUnitario: number;
@@ -68,7 +68,7 @@ export declare class ClientesService {
         nombre: string;
         descripcion: string;
         tecnica: string;
-        cantidad: string;
+        cantidad: number;
         direccion: string;
         celular: string;
         precioUnitario: number;

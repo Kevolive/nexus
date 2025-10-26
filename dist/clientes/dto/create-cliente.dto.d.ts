@@ -3,11 +3,11 @@ export declare class CreateClienteDto {
     descripcion: string;
     tecnica: string;
     tipo: string;
-    cantidad: string;
+    cantidad: number;
     direccion: string;
     celular: string;
     precioUnitario: number;
     precioTotal: number;
     imagen: string;
-    fecha: Date;
+    fecha: string;
 }
