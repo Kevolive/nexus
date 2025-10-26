@@ -10,6 +10,7 @@ export declare class ClientesController {
         nombre: string;
         descripcion: string;
         tecnica: string;
+        tipo: string;
         cantidad: number;
         direccion: string;
         celular: string;
@@ -25,6 +26,7 @@ export declare class ClientesController {
         nombre: string;
         descripcion: string;
         tecnica: string;
+        tipo: string;
         cantidad: number;
         direccion: string;
         celular: string;
@@ -40,6 +42,7 @@ export declare class ClientesController {
         nombre: string;
         descripcion: string;
         tecnica: string;
+        tipo: string;
         cantidad: number;
         direccion: string;
         celular: string;
@@ -55,6 +58,7 @@ export declare class ClientesController {
         nombre: string;
         descripcion: string;
         tecnica: string;
+        tipo: string;
         cantidad: number;
         direccion: string;
         celular: string;
@@ -70,6 +74,7 @@ export declare class ClientesController {
         nombre: string;
         descripcion: string;
         tecnica: string;
+        tipo: string;
         cantidad: number;
         direccion: string;
         celular: string;
