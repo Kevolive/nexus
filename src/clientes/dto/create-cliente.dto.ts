@@ -1,5 +1,5 @@
 // create-cliente.dto.ts
-import { IsString, IsNumber, IsDataURI, IsDate, IsOptional, IsDateString } from 'class-validator';
+import { IsString, IsNumber, IsDataURI, IsDate } from 'class-validator';
 
 export class CreateClienteDto {
     @IsString()
@@ -15,7 +15,7 @@ export class CreateClienteDto {
     tipo: string;
 
     @IsNumber()
-    cantidad: number;
+    cantidad: string;
 
     @IsString()
     direccion: string;
@@ -28,12 +28,10 @@ export class CreateClienteDto {
 
     @IsNumber()
     precioTotal: number;
-    
 
-    @IsDateString()
-    fecha: string;
+    @IsDataURI()
+    imagen: string;
 
-    @IsOptional()
-    @IsString()
-    image?: string;
+    @IsDate()
+    fecha: Date;
 }
