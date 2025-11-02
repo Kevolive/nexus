@@ -18,7 +18,7 @@ model Cliente {
   celular         String
   precioUnitario  Float
   precioTotal     Float
-  fecha           DateTime @default(now())
+  fecha           DateTime
   imagen          String?
   creadoEn        DateTime @default(now())
   actualizacionEn DateTime @updatedAt
