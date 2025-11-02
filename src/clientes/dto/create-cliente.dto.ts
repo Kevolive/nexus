@@ -38,6 +38,7 @@ export class CreateClienteDto {
     @IsString()
     imagen: string;
 
+    @IsString()
     fecha: string;
     
 }

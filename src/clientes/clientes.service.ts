@@ -10,12 +10,23 @@ export class ClientesService {
 
     constructor(private prisma: PrismaService) { }
 
-    create(data: CreateClienteDto) {
-        return this.prisma.cliente.create({ data: {
-            ...data,
-            cantidad: Number(data.cantidad),
-            fecha: new Date(data.fecha),
-        } });
+    create(createClienteDto: CreateClienteDto) {
+        // Convertir los campos numéricos explícitamente
+        console.log('🔍 CreateClienteDto recibido:', createClienteDto);
+        console.log('🔍 Fecha en DTO:', createClienteDto.fecha, 'Tipo:', typeof createClienteDto.fecha);
+        const data = {
+            ...createClienteDto,
+            cantidad: Number(createClienteDto.cantidad),
+            precioUnitario: Number(createClienteDto.precioUnitario),
+            precioTotal: Number(createClienteDto.precioTotal),
+            fecha: String(createClienteDto.fecha)
+        };
+
+
+        delete (data as any).id; // Por si acaso viene id
+
+        console.log('📤 Data para Prisma:', data);
+        return this.prisma.cliente.create({ data });
     }
 
     findAll() {
