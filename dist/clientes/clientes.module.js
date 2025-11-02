@@ -10,7 +10,7 @@ exports.ClientesModule = void 0;
 const common_1 = require("@nestjs/common");
 const clientes_service_1 = require("./clientes.service");
 const clientes_controller_1 = require("./clientes.controller");
-const database_module_1 = require("../database/database.module");
+const database_module_1 = require("src/database/database.module");
 let ClientesModule = class ClientesModule {
 };
 exports.ClientesModule = ClientesModule;

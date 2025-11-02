@@ -17,9 +17,9 @@ const common_1 = require("@nestjs/common");
 const clientes_service_1 = require("./clientes.service");
 const create_cliente_dto_1 = require("./dto/create-cliente.dto");
 const update_cliente_dto_1 = require("./dto/update-cliente.dto");
-const jwt_auth_guard_1 = require("../auth/guards/jwt-auth.guard");
+const jwt_auth_guard_1 = require("src/auth/guards/jwt-auth.guard");
 const swagger_1 = require("@nestjs/swagger");
-const roles_guard_1 = require("../auth/guards/roles.guard");
+const roles_guard_1 = require("src/auth/guards/roles.guard");
 let ClientesController = class ClientesController {
     clientesService;
     constructor(clientesService) {
