@@ -6,7 +6,6 @@ export class CreateClienteDto {
     @IsString()
     nombre: string;
 
-    // @IsString()
     @IsOptional()
     descripcion: string;
 
@@ -35,11 +34,10 @@ export class CreateClienteDto {
     @IsNumber()
     precioTotal: number;
 
-    
     @IsOptional()
     @IsString()
     imagen: string;
 
-    // @IsDateString()
     fecha: string;
+    
 }
