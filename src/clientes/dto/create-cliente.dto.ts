@@ -7,6 +7,7 @@ export class CreateClienteDto {
     nombre: string;
 
     // @IsString()
+    @IsOptional()
     descripcion: string;
 
     @IsString()
@@ -22,6 +23,7 @@ export class CreateClienteDto {
     @IsString()
     direccion: string;
 
+    @IsOptional()
     @IsString()
     celular: string;
 
