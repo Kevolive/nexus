@@ -8,10 +8,7 @@ async function bootstrap() {
 
   // ✅ Habilitar CORS con la forma nativa de NestJS
   app.enableCors({
-    origin: [
-      'http://localhost:4200',        // Frontend local (Angular)
-       // (opcional) frontend desplegado
-    ],
+    origin: '*',
     credentials: true,
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     allowedHeaders: 'Content-Type, Authorization',
