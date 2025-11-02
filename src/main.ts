@@ -15,7 +15,7 @@ async function bootstrap() {
   });
 
   // ✅ Validación global de DTOs
-  app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
+  app.useGlobalPipes(new ValidationPipe({ whitelist: true, transform: true }));
 
   // ✅ Escuchar en Render (usa 0.0.0.0 y puerto dinámico)
   const port = process.env.PORT || 3000;

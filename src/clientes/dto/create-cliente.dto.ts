@@ -1,4 +1,5 @@
 // create-cliente.dto.ts
+import { Type } from 'class-transformer';
 import { IsString, IsNumber, IsDateString, IsOptional } from 'class-validator';
 
 export class CreateClienteDto {
@@ -14,6 +15,7 @@ export class CreateClienteDto {
     @IsString()
     tipo: string;
 
+    @Type(() => Number)
     @IsNumber()
     cantidad: number;
 
@@ -23,9 +25,11 @@ export class CreateClienteDto {
     @IsString()
     celular: string;
 
+    @Type(() => Number)
     @IsNumber()
     precioUnitario: number;
-
+    
+    @Type(() => Number)
     @IsNumber()
     precioTotal: number;
 
