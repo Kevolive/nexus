@@ -33,6 +33,8 @@ export class ClientesController {
     return this.clientesService.create(createClienteDto);
   }
 
+
+  //Todos los Gets
   @Get()
   findAll() {
 return this.clientesService.findAll();
@@ -42,6 +44,23 @@ return this.clientesService.findAll();
 findOne(@Param('id') id: string) {
   return this.clientesService.findOne(+id);
 }
+
+@Get('mes/:year/:month')
+findByMonth(
+  @Param('year') year: string,
+  @Param('month') month: string
+) {
+  return this.clientesService.findByMonth(+year, +month);
+}
+
+@Get('ganancias/:year/:month')
+getGanancias(
+  @Param('year') year: string,
+  @Param('month') month: string
+) {
+  return this.clientesService.getGanancias(+year, +month);
+}
+
 
 @Patch(':id')
 update(@Param('id') id: string, @Body() updateClienteDto: UpdateClienteDto) {

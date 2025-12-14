@@ -20,6 +20,7 @@ model Cliente {
   precioTotal     Float
   fecha           DateTime
   imagen          String?
+  tipoPago        String?
   creadoEn        DateTime @default(now())
   actualizacionEn DateTime @updatedAt
 }

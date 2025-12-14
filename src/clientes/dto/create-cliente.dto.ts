@@ -41,4 +41,8 @@ export class CreateClienteDto {
     @IsString()
     fecha: string;
     
+    @IsOptional()
+    @IsString()
+    tipoPago?: string
+    
 }
